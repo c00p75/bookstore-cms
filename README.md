@@ -24,7 +24,7 @@ After you're finished please remove all the comments and instructions!
 
 <div align="center">
 
-  <h1><b>Math Magician</b></h1>
+  <h1><b>Book Store</b></h1>
 
 </div>
 
@@ -33,12 +33,11 @@ After you're finished please remove all the comments and instructions!
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Movie Site ](#-movie-site-)
+- [📖 Book Store ](#-Book-Store-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
   - [🚀 Live Demo ](#-live-demo-)
-  - [🎞 Video Link ](#-video-link-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -91,9 +90,9 @@ After you're finished please remove all the comments and instructions!
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
--**Display a list of books**
--**Add a book**
--**Remove a selected book**
+- **Display a list of books**
+- **Add a book**
+- **Remove a selected book**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -158,9 +157,8 @@ To run the project, execute the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Play Videos**
+- [ ] **Read books from website**
 - [ ] **Reply to comments**
-- [ ] **Download Videos**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
