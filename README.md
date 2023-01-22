@@ -54,9 +54,9 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Math Magicians <a name="about-project"></a>
+# 📖 Book-Store <a name="about-project"></a>
 
-**Math Magician** "Math magicians" is a website for all fans of mathematics. It is a Single Page App (SPA) that allows users to make simple calculations as well as read a random math-related quote.
+**Book-Store** "Book-Store" is an MVP website that allows you to display a list of books, add a book, and remove a selected book.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -77,7 +77,7 @@ After you're finished please remove all the comments and instructions!
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="render.com">Render is used to deploy this page</a></li>
+    <li><a href="render.com">Render will be used to deploy this page</a></li>
   </ul>
 </details>
 
@@ -91,9 +91,9 @@ After you're finished please remove all the comments and instructions!
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
-
-- **Make simple calculations**
-- **Read a random math-related quote**
+-**Display a list of books**
+-**Add a book**
+-**Remove a selected book**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -101,7 +101,7 @@ After you're finished please remove all the comments and instructions!
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- https://math-magicians-v6z8.onrender.com/
+- Comming soon
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -122,7 +122,7 @@ To get a local copy up and running, follow these steps.
 Clone this repository to your desired folder:
 
 - `cd my-folder`
-- `git clone https://github.com/c00p75/Math-Magicians.git`
+- `git clone https://github.com/c00p75/Book-Store.git`
 
 ### Install
 
