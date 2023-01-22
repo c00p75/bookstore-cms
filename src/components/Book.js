@@ -1,7 +1,7 @@
 import React from 'react';
 import './bookStore.css';
 
-const BookItem = (props) => {
+const Book = (props) => {
   const property = props;
   const bookItem = property.book;
   return (
@@ -40,4 +40,4 @@ const BookItem = (props) => {
   );
 };
 
-export default BookItem;
+export default Book;

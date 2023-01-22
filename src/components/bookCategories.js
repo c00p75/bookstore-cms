@@ -1,5 +1,11 @@
 const Categories = () => (
-  <h1>Cooming soon</h1>
+  <div className="categoryBtn d-flex justify-content-center align-items-center">
+    <button
+      type="button"
+    >
+      Check Status
+    </button>
+  </div>
 );
 
 export default Categories;

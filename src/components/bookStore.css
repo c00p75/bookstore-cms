@@ -217,7 +217,8 @@
   color: #121212;
 }
 
-.form button {
+.form button,
+.categoryBtn button {
   width: 20%;
   cursor: pointer;
   padding: 12px;
@@ -229,4 +230,8 @@
   font-size: 0.813rem;
   font-weight: 700;
   font-family: "Roboto Slab", serif;
+}
+
+.categoryBtn {
+  height: 40vh;
 }

@@ -1,4 +1,4 @@
-import BookItem from './BookItem';
+import Book from './Book';
 import './bookStore.css';
 
 const BookList = (props) => {
@@ -9,7 +9,7 @@ const BookList = (props) => {
       <ul className="container allBooks">
         {
           book.map((item) => (
-            <BookItem
+            <Book
               key={item.id}
               book={item}
             />
