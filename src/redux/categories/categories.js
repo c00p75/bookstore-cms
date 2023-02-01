@@ -5,7 +5,7 @@ const defaultState = [];
 export const checkStatusReducer = (state = defaultState, action) => {
   switch (action.type) {
     case CHECK_STATUS:
-      return 'In progress..';
+      return '⚠ In progress...';
     default:
       return state;
   }
