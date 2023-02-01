@@ -8,6 +8,7 @@ const Categories = () => {
   // useSelector is used to select specific state from redux store's combined reducers.
   const currentStatus = useSelector((state) => state.status);
 
+  // Dispatching status action
   const checkStatus = () => dispatch(status());
 
   return (
