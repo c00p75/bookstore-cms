@@ -10,7 +10,7 @@ const BookList = (props) => {
         {
           book.map((item) => (
             <Book
-              key={item.id}
+              key={item.item_id}
               book={item}
             />
           ))

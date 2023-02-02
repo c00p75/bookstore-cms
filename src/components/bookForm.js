@@ -25,12 +25,10 @@ const BookForm = () => {
   const addNewBook = () => {
     // variable to store book details in object
     const newBook = {
+      item_id: uuidv4(), // Use uuid to generate unique id
       title,
       author,
       category: 'Action',
-      progress: '0',
-      chapter: 'Introduction',
-      id: uuidv4(), // Use uuid to generate unique id
     };
 
     // Calling useDispatch through dispatch variable to send action to store.

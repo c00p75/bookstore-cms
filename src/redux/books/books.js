@@ -1,56 +1,71 @@
-import { v4 as uuidv4 } from 'uuid';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+
+const baseURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/';
+const appID = 'G55BGctcj4i26M6d6pQC';
 
 // Initializing constatnt action variables
+const BOOK_COLLECTION = 'bookstore/books/BOOK_COLLECTION';
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 
-const defaultState = [
-  {
-    title: 'The Hunger Games',
-    author: 'Suzanne Collins',
-    category: 'Action',
-    progress: '64',
-    chapter: 'Chapter 17',
-    id: uuidv4(),
-  },
-  {
-    title: 'Dune',
-    author: 'Frank Herbert',
-    category: 'Science Fiction',
-    progress: '8',
-    chapter: 'Chapter 3: "A Lesson Learned"',
-    id: uuidv4(),
-  },
-  {
-    title: 'Capital in the Twenty-First Century',
-    author: 'Suzanne Collins',
-    category: 'Economy',
-    progress: '0',
-    chapter: 'Introduction',
-    id: uuidv4(),
-  },
-];
+// Initializing default state as an empty array
+const defaultState = [];
 
+// Creating reducer to handle action calls
 export const booksReducer = (state = defaultState, action) => {
   switch (action.type) {
-    case ADD_BOOK:
-      return [...state, action.book];
+    case `${BOOK_COLLECTION}/fulfilled`: // fulfilled is a default action of thunk sent if funcion call succeeds. Others include pending and rejected.
+      return action.payload; // Using payload(result) after executing thunk as state.
 
-    case REMOVE_BOOK:
-      return [...state.filter((book) => book.id !== action.id)];
+    case `${ADD_BOOK}/fulfilled`:
+      return [...state, action.payload];
+
+    case `${REMOVE_BOOK}/fulfilled`:
+      // Filter out removed item from DOM's current state.
+      return [...state.filter((book) => book.item_id.toString() !== action.payload.toString())];
 
     default:
       return state;
   }
 };
 
-// Reducer actions
-export const addBook = (book) => ({
-  type: ADD_BOOK,
-  book,
-});
+// Create action to fetch data from API.
+// createAsyncThunk is used as middleware for every function.
+// They allow nested functions to be executed within an action.
+export const fetchBooksAction = createAsyncThunk(
+  BOOK_COLLECTION, async () => {
+    let fetchBooks; // Declaring variable to later store fetched data
+    await fetch(`${baseURL}${appID}/books`)
+      .then((response) => response.json())
+      .then((json) => {
+        // Adding id keys to their nested arrays in order to present data in required format.
+        fetchBooks = Object.keys(json).map((book) => ({
+          item_id: book,
+          ...json[book][0],
+        }));
+      });
+    return fetchBooks;
+  },
+);
 
-export const removeBook = (id) => ({
-  type: REMOVE_BOOK,
-  id,
-});
+export const addBook = createAsyncThunk(
+  ADD_BOOK, async (book) => {
+    fetch(`${baseURL}${appID}/books`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(book), // Where book is the object passed from the form
+    });
+    return book;
+  },
+);
+
+export const removeBook = createAsyncThunk(
+  REMOVE_BOOK, async (bookId) => {
+    await fetch(`${baseURL}${appID}/books/${bookId}`, {
+      method: 'DELETE',
+    });
+    return bookId;
+  },
+);
