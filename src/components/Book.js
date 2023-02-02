@@ -11,7 +11,12 @@ const Book = (props) => {
   const dispatch = useDispatch();
 
   const handleRemoveButton = () => {
-    dispatch(removeBook(bookItem.id));
+    dispatch(removeBook(bookItem.item_id));
+  };
+
+  const userAppData = {
+    progress: '0',
+    chapter: 'Introduction',
   };
 
   return (
@@ -34,7 +39,7 @@ const Book = (props) => {
         </div>
         <div style={{ fontSize: '2rem' }} className="d-flex flex-column">
           <span>
-            {bookItem.progress}
+            {userAppData.progress}
             %
           </span>
           <span style={{ fontSize: '0.875rem', opacity: '0.5' }}>Completed</span>
@@ -43,7 +48,7 @@ const Book = (props) => {
       <div className="largeDivider"> </div>
       <div className="d-flex flex-column">
         <span style={{ fontSize: '0.813rem', opacity: '0.5' }}>CURRENT CHAPTER</span>
-        <span className="bookChapter">{bookItem.chapter}</span>
+        <span className="bookChapter">{userAppData.chapter}</span>
         <button type="button" className="updateBtn mt-3">UPDATE PROGRESS</button>
       </div>
     </li>
