@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/icon?family=Roboto+Slab');
 
+a {
+  text-decoration: none;
+}
+
 #navbar {
+  padding: 24px 4%;
   background-color: #fff;
   border-bottom: 1px solid #e8e8e8;
   align-items: center;
@@ -149,7 +154,6 @@
 .largeDivider {
   width: 0.125rem !important;
   height: 4.375rem !important;
-  margin: 0 3.688rem 0 4.938rem;
   background-color: #e8e8e8;
 }
 
@@ -222,7 +226,7 @@
 .form button,
 .categoryBtn button {
   cursor: pointer;
-  padding: 12px;
+  padding: 0.5em;
   border-radius: 3px;
   background-color: #0290ff;
   border: none;

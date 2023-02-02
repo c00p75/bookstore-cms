@@ -18,7 +18,7 @@ const BookStore = () => {
   }, [dispatch]);
 
   return (
-    <div className="container bookListContainer padding">
+    <div className="container-fluid bookListContainer padding">
       <BookList
         className="bookList"
         bookDetails={bookDetails}
