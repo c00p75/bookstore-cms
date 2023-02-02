@@ -1,8 +1,35 @@
+import { v4 as uuidv4 } from 'uuid';
+
 // Initializing constatnt action variables
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 
-const defaultState = [];
+const defaultState = [
+  {
+    title: 'The Hunger Games',
+    author: 'Suzanne Collins',
+    category: 'Action',
+    progress: '64',
+    chapter: 'Chapter 17',
+    id: uuidv4(),
+  },
+  {
+    title: 'Dune',
+    author: 'Frank Herbert',
+    category: 'Science Fiction',
+    progress: '8',
+    chapter: 'Chapter 3: "A Lesson Learned"',
+    id: uuidv4(),
+  },
+  {
+    title: 'Capital in the Twenty-First Century',
+    author: 'Suzanne Collins',
+    category: 'Economy',
+    progress: '0',
+    chapter: 'Introduction',
+    id: uuidv4(),
+  },
+];
 
 export const booksReducer = (state = defaultState, action) => {
   switch (action.type) {
@@ -23,7 +50,7 @@ export const addBook = (book) => ({
   book,
 });
 
-export const removeBooks = (id) => ({
+export const removeBook = (id) => ({
   type: REMOVE_BOOK,
   id,
 });

@@ -27,10 +27,14 @@
 }
 
 .logo {
-  width: 30%;
+  width: 35%;
   font-size: 1.875rem;
   font-weight: 700;
   color: #0290ff;
+}
+
+.logo:hover {
+  text-decoration: none;
 }
 
 .loginContainer {
@@ -38,7 +42,6 @@
 }
 
 .login {
-  align-self: flex-end;
   cursor: pointer;
   background: none;
   border: 0;
@@ -200,10 +203,8 @@
   font-weight: lighter;
 }
 
-#titleInput {
-  width: 50%;
-  letter-spacing: -0.18px;
-  color: #888;
+.form * {
+  margin-top: 5px;
 }
 
 #categoryList {
@@ -215,11 +216,11 @@
   font-size: 1rem;
   letter-spacing: -0.15px;
   color: #121212;
+  cursor: pointer;
 }
 
 .form button,
 .categoryBtn button {
-  width: 20%;
   cursor: pointer;
   padding: 12px;
   border-radius: 3px;

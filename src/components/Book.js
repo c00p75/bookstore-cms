@@ -1,9 +1,19 @@
 import React from 'react';
 import './bookStore.css';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/books';
 
 const Book = (props) => {
   const property = props;
   const bookItem = property.book;
+
+  // useDispatch is used to handle all actions from store.
+  const dispatch = useDispatch();
+
+  const handleRemoveButton = () => {
+    dispatch(removeBook(bookItem.id));
+  };
+
   return (
     <li className="container d-flex justify-between align-items-center">
       <div className="details d-flex flex-column">
@@ -13,7 +23,7 @@ const Book = (props) => {
         <div className="d-flex justify-between mt-2">
           <button type="button" className="bookBtn">Comment</button>
           <span className="divider">|</span>
-          <button type="button" className="bookBtn px-2">Remove</button>
+          <button type="button" className="bookBtn px-2" onClick={handleRemoveButton}>Remove</button>
           <span className="divider">|</span>
           <button type="button" className="bookBtn px-2">Edit</button>
         </div>
