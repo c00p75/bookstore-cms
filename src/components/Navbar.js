@@ -18,9 +18,9 @@ const links = [
 ];
 
 const Navbar = () => (
-  <nav id="navbar" className="container-fluid d-flex px-5 py-3 justify-content-between">
-    <a className="logo d-flex align-self-center" href="/#">Bookstore CMS</a>
-    <ul className="d-flex my-2 align-items-center">
+  <nav id="navbar" className="container-fluid d-flex justify-content-around">
+    <a className="logo d-flex align-self-center text-end" href="/">Bookstore CMS</a>
+    <ul className="d-flex my-2 p-0 align-items-center">
       {links.map((link) => (
         <li key={link.id} className="px-1">
           <NavLink to={link.path} exact="true">

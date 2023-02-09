@@ -20,7 +20,7 @@ const Book = (props) => {
   };
 
   return (
-    <li className="container d-flex justify-between align-items-center">
+    <li className="container d-flex justify-content-between align-items-center">
       <div className="details d-flex flex-column">
         <span className="bookCategory">{bookItem.category}</span>
         <span className="bookTitle">{bookItem.title}</span>
@@ -46,7 +46,7 @@ const Book = (props) => {
         </div>
       </div>
       <div className="largeDivider"> </div>
-      <div className="d-flex flex-column">
+      <div className="d-flex flex-column" style={{ width: '14rem' }}>
         <span style={{ fontSize: '0.813rem', opacity: '0.5' }}>CURRENT CHAPTER</span>
         <span className="bookChapter">{userAppData.chapter}</span>
         <button type="button" className="updateBtn mt-3">UPDATE PROGRESS</button>

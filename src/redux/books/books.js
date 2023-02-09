@@ -15,7 +15,7 @@ const defaultState = [];
 export const booksReducer = (state = defaultState, action) => {
   switch (action.type) {
     case `${BOOK_COLLECTION}/fulfilled`: // fulfilled is a default action of thunk sent if funcion call succeeds. Others include pending and rejected.
-      return action.payload; // Using payload(result) after executing thunk as state.
+      return action.payload; // Using payload(result) after executing thunk as current state.
 
     case `${ADD_BOOK}/fulfilled`:
       return [...state, action.payload];
